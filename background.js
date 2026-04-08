@@ -1,0 +1,2 @@
+// 允许用户点击插件图标时自动打开侧边栏
+chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch((error) => console.error(error));

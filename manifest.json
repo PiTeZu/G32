@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Context Companion (MVP)",
+  "version": "1.0",
+  "description": "一键获取新闻背景知识",
+  "permissions": [
+    "sidePanel",
+    "activeTab"
+  ],
+  "action": {
+    "default_title": "打开背景知识侧边栏"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
