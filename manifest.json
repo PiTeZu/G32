@@ -5,7 +5,11 @@
   "description": "一键获取新闻背景知识",
   "permissions": [
     "sidePanel",
-    "activeTab"
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "action": {
     "default_title": "打开背景知识侧边栏"
