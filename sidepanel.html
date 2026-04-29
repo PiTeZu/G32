@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fact Checker</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="panel-container">
+    <!-- Header -->
+    <header class="panel-header">
+      <h1 class="panel-title">
+        <span class="icon">&#128269;</span> AI Fact Checker
+      </h1>
+      <button id="settingsBtn" class="icon-btn" title="Open Settings">&#9881;</button>
+    </header>
+
+    <!-- Selection display area -->
+    <section class="selection-section">
+      <div class="section-label">Selected Text</div>
+      <div id="selectionDisplay" class="selection-text">
+        <span class="placeholder">Select text on the page, then click "Get Selection" or use the context menu.</span>
+      </div>
+      <div class="selection-actions">
+        <button id="getSelectionBtn" class="btn btn-secondary">Get Selection</button>
+        <button id="verifyBtn" class="btn btn-primary" disabled>Verify with AI</button>
+      </div>
+    </section>
+
+    <!-- Status indicator -->
+    <div id="statusBar" class="status-bar hidden"></div>
+
+    <!-- Results area -->
+    <section id="resultsSection" class="results-section hidden">
+      <div class="section-label">Verification Results</div>
+      <div id="verificationSummary" class="verification-summary"></div>
+      <div id="sourcesList" class="sources-list"></div>
+    </section>
+
+    <!-- Error display -->
+    <div id="errorDisplay" class="error-display hidden"></div>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

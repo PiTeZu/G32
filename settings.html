@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fact Checker - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-container">
+    <header class="settings-header">
+      <h1>&#128269; AI Fact Checker Settings</h1>
+      <p class="subtitle">Configure your AI provider for information verification</p>
+    </header>
+
+    <form id="settingsForm" class="settings-form">
+      <!-- API Key -->
+      <div class="form-group">
+        <label for="apiKey">API Key</label>
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="apiKey"
+            name="apiKey"
+            placeholder="Enter your DeepSeek API key"
+            autocomplete="off"
+          >
+          <button type="button" id="toggleApiKey" class="toggle-btn" title="Show/Hide API Key">&#128065;</button>
+        </div>
+        <p class="help-text">
+          Get your API key at
+          <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener">platform.deepseek.com</a>
+        </p>
+      </div>
+
+      <!-- API Endpoint -->
+      <div class="form-group">
+        <label for="apiEndpoint">API Endpoint URL</label>
+        <input
+          type="url"
+          id="apiEndpoint"
+          name="apiEndpoint"
+          placeholder="https://api.deepseek.com/v1/chat/completions"
+        >
+        <p class="help-text">Default: DeepSeek Chat Completions API. Change this to use a different OpenAI-compatible provider.</p>
+      </div>
+
+      <!-- Model -->
+      <div class="form-group">
+        <label for="model">Model Name</label>
+        <input
+          type="text"
+          id="model"
+          name="model"
+          placeholder="deepseek-v4-flash"
+        >
+        <p class="help-text">The model identifier for your AI provider (e.g., deepseek-chat, gpt-4o, claude-3-opus).</p>
+      </div>
+
+      <!-- Temperature -->
+      <div class="form-group">
+        <label for="temperature">
+          Temperature: <span id="temperatureValue">0.3</span>
+        </label>
+        <input
+          type="range"
+          id="temperature"
+          name="temperature"
+          min="0"
+          max="1"
+          step="0.1"
+          value="0.3"
+        >
+        <p class="help-text">Lower values produce more consistent, factual outputs. Higher values produce more creative outputs.</p>
+      </div>
+
+      <!-- Max Tokens -->
+      <div class="form-group">
+        <label for="maxTokens">Max Tokens</label>
+        <input
+          type="number"
+          id="maxTokens"
+          name="maxTokens"
+          min="256"
+          max="32768"
+          step="256"
+          placeholder="4096"
+        >
+        <p class="help-text">Maximum length of the AI response in tokens. 4096 is recommended.</p>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="form-actions">
+        <button type="button" id="testConnectionBtn" class="btn btn-outline">Test Connection</button>
+        <button type="submit" class="btn btn-primary">Save Settings</button>
+      </div>
+    </form>
+
+    <!-- Status messages -->
+    <div id="statusMessage" class="status-message hidden"></div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
