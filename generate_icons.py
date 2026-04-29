@@ -1,4 +1,4 @@
-"""Generate simple PNG icons for the AI Fact Checker Chrome extension."""
+"""Generate simple PNG icons for the TruthLens Chrome extension."""
 import struct
 import zlib
 import os

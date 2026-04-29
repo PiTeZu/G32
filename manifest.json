@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "AI Fact Checker",
+  "name": "TruthLens",
   "version": "1.0.0",
-  "description": "Verify information reliability on web pages. Select text and use AI to search for credible sources.",
+  "description": "TruthLens - Verify information reliability on web pages. Select text and use AI to search for credible sources.",
   "permissions": [
     "sidePanel",
     "storage",
@@ -14,7 +14,7 @@
     "https://api.deepseek.com/*"
   ],
   "action": {
-    "default_title": "AI Fact Checker - Open Sidebar"
+    "default_title": "TruthLens - Open Sidebar"
   },
   "side_panel": {
     "default_path": "sidepanel.html"

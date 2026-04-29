@@ -1,4 +1,4 @@
-// sidepanel.js - Main logic for the AI Fact Checker sidebar
+// sidepanel.js - Main logic for the TruthLens sidebar
 
 // DOM element references
 const selectionDisplay = document.getElementById('selectionDisplay');

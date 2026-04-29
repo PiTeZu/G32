@@ -18,7 +18,7 @@ chrome.action.onClicked.addListener((tab) => {
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'verify-with-ai',
-    title: 'Verify with AI Fact Checker',
+    title: 'Verify with TruthLens',
     contexts: ['selection']
   });
 });

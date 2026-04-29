@@ -1,4 +1,4 @@
-// settings.js - Settings page logic for AI Fact Checker
+// settings.js - Settings page logic for TruthLens
 
 // DOM element references
 const settingsForm = document.getElementById('settingsForm');
