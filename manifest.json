@@ -11,7 +11,8 @@
     "contextMenus"
   ],
   "host_permissions": [
-    "https://api.deepseek.com/*"
+    "https://api.deepseek.com/*",
+    "https://html.duckduckgo.com/*"
   ],
   "action": {
     "default_title": "TruthLens - Open Sidebar"

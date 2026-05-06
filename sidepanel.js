@@ -157,7 +157,7 @@ async function runVerification() {
     }
 
     if (response.success && response.data) {
-      displayResults(response.data);
+      displayResults(response.data, response.searchUsed);
     } else {
       displayError('Unexpected response from AI service.');
     }
@@ -174,16 +174,21 @@ async function runVerification() {
 /**
  * Display verification results
  */
-function displayResults(data) {
+function displayResults(data, searchUsed) {
   resultsSection.classList.remove('hidden');
 
-  // Display verification summary
+  // Display verification summary with search indicator
+  let summaryHtml = '';
   if (data.verification) {
-    verificationSummary.innerHTML = `<strong>Assessment:</strong> ${escapeHtml(data.verification)}`;
-    verificationSummary.classList.remove('hidden');
-  } else {
-    verificationSummary.classList.add('hidden');
+    summaryHtml = `<strong>Assessment:</strong> ${escapeHtml(data.verification)}`;
   }
+  if (searchUsed) {
+    summaryHtml += `<br><span style="font-size:11px;color:var(--success);">&#x2713; Sources from live web search</span>`;
+  } else {
+    summaryHtml += `<br><span style="font-size:11px;color:var(--warning);">&#x26A0; Web search unavailable — sources may not be real-time</span>`;
+  }
+  verificationSummary.innerHTML = summaryHtml;
+  verificationSummary.classList.remove('hidden');
 
   // Display sources
   sourcesList.innerHTML = '';
@@ -235,7 +240,7 @@ function createSourceCard(source, rank) {
  */
 function showLoading(show) {
   if (show) {
-    statusBar.textContent = 'Verifying information with AI...';
+    statusBar.textContent = 'Searching the web and verifying with AI...';
     statusBar.classList.remove('hidden', 'error');
   } else {
     statusBar.classList.add('hidden');
